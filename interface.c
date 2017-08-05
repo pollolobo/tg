@@ -2704,7 +2704,7 @@ void print_user_status (struct tgl_user_status *S, struct in_ev *ev) {
   assert(!enable_json); //calling functions print_user_info_gw() and user_status_upd() already check.
   if (S->online > 0) {
     mprintf (ev, "online (was online ");
-    print_date_full (ev, S->when);
+    print_date_full (ev, S->when - 5*60);
     mprintf (ev, ")");
   } else {
     if (S->online == 0) {
